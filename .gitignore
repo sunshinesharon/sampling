@@ -1,4 +1,4 @@
 .DS_Store
 .vscode/
 student_data.csv
-
+venv/
