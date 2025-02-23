@@ -10,13 +10,28 @@ Modify the number of repetitions in the simulation to 100 (from the original 100
 
 Alter the code so that it is reproducible. Describe the changes you made to the code and how they affected the reproducibility of the script file. The output does not need to match Whitby’s original blogpost/graphs, it just needs to produce the same output when run multiple times
 
-# Author: YOUR NAME
+# Author: Sharon Jacob
 
 ```
-Please write your explanation here...
+## **1. Identifying Sampling Stages**
+The following sampling procedures occur in the model:
+- **Infection Sampling:** 10% of individuals are randomly selected to be infected (`np.random.choice`).
+- **Primary Contact Tracing:** 20% of infected individuals are randomly traced (`np.random.rand`).
+- **Secondary Contact Tracing:** Events with at least two traced infections result in all infected attendees being traced.
+
+## **2. Running the Original Code**
+After running the original code (`whitby_covid_tracing.py`), the results were **not reproducible**, meaning they changed with each execution.
+
+## **3. Modifications for Reproducibility**
+To ensure reproducibility:
+- **Set a random seed (`np.random.seed(42)`)** so that random choices are consistent.
+- **Reduced repetitions from 1000 to 100** to observe variations in results.
+
+### **Code Changes Made:**
+- **Before:** The script rendered different results each time.
+- **After:** The results remain the same across runs.
 
 ```
-
 
 ## Criteria
 
@@ -39,9 +54,9 @@ Please write your explanation here...
     * Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
 
 Checklist:
-- [ ] Create a branch called `assignment-1`.
-- [ ] Ensure that the repository is public.
-- [ ] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
-- [ ] Verify that the link is accessible in a private browser window.
+- [x] Create a branch called `assignment-1`.
+- [x] Ensure that the repository is public.
+- [x] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
+- [x] Verify that the link is accessible in a private browser window.
 
 If you encounter any difficulties or have questions, please don't hesitate to reach out to our team via the help channel in Slack. Our Technical Facilitators and Learning Support staff are here to help you navigate any challenges.
